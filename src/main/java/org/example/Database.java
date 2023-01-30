@@ -57,7 +57,7 @@ class Dbconnection
     {
 
 
-        connector=null;
+        Dbconnection connector=null;
         if(status==1)
         {
             status=0;
