@@ -10,7 +10,7 @@ class Dbconnection
 
    int status=0;
 
-    static Dbconnection connector=null;
+    Dbconnection connector=null;
 
 
     private Dbconnection()
