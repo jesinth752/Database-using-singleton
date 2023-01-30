@@ -8,7 +8,7 @@ class Dbconnection
 {
     private static final Logger LOGGER = Logger.getLogger("InfoLogging");
 
-    static int status=0;
+   public static int status=0;
 
     static Dbconnection connector=null;
 
