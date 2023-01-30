@@ -12,7 +12,7 @@ class Dbconnection
 
      static Dbconnection connector;
     
-    static Dbconnection con;
+    static Dbconnection con=null;
 
 
     private Dbconnection()
