@@ -59,7 +59,7 @@ class Dbconnection
     {
 
 
-        Dbconnection con=null;
+        con=null;
         if(status==1)
         {
             status=0;
