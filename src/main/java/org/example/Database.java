@@ -10,7 +10,7 @@ class Dbconnection
 
     static int status=0;
 
-    private static Dbconnection connector=null;
+    static Dbconnection connector=null;
 
 
     private Dbconnection()
@@ -91,6 +91,7 @@ public class Database {
                 case 2 -> db.checkconnection();
                 case 3 -> db.closeconnection();
                 case 4 -> run=1;
+                 default ->LOGGER.info(" Invalid choice");
 
             }
 
