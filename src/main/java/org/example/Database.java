@@ -8,7 +8,7 @@ class Dbconnection
 {
     private static final Logger LOGGER = Logger.getLogger("InfoLogging");
 
-    int status=0;
+     static int status=0;
 
      static Dbconnection connector;
     
@@ -29,7 +29,7 @@ class Dbconnection
 
         return connector;
     }
-    void newconnection()
+   static void newconnection()
     {
         if(status==1)
         {
@@ -42,7 +42,7 @@ class Dbconnection
 
 
     }
-    void checkconnection()
+   static void checkconnection()
     {
         if(status==1)
         {
@@ -55,7 +55,7 @@ class Dbconnection
         }
 
     }
-    void closeconnection()
+   static void closeconnection()
     {
 
 
