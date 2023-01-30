@@ -12,7 +12,7 @@ class Dbconnection
 
      static Dbconnection connector;
     
-    static Dbconnection con;
+     static int con=0;
 
 
     private Dbconnection()
@@ -20,7 +20,7 @@ class Dbconnection
     }
     public static Dbconnection getInstance()
     {
-        if(con==null)
+        if(con==0)
         {
 
             connector=new Dbconnection();
@@ -59,7 +59,7 @@ class Dbconnection
     {
 
 
-        con=null;
+        con=0;
         if(status==1)
         {
             status=0;
