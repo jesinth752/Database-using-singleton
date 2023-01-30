@@ -8,11 +8,10 @@ class Dbconnection
 {
     private static final Logger LOGGER = Logger.getLogger("InfoLogging");
 
-      int status=0;
+     static int status=0;
 
-     static Dbconnection connector;
-    
-     static int con=0;
+     static Dbconnection connector=null;
+  
 
 
     private Dbconnection()
@@ -20,7 +19,7 @@ class Dbconnection
     }
     public static Dbconnection getInstance()
     {
-        if(con==0)
+        if(connector==null)
         {
 
             connector=new Dbconnection();
@@ -29,7 +28,7 @@ class Dbconnection
 
         return connector;
     }
-   void newconnection()
+   static void newconnection()
     {
         if(status==1)
         {
@@ -42,7 +41,7 @@ class Dbconnection
 
 
     }
-    void checkconnection()
+    static void checkconnection()
     {
         if(status==1)
         {
@@ -55,11 +54,11 @@ class Dbconnection
         }
 
     }
-    void closeconnection()
+   static void closeconnection()
     {
 
 
-        con=0;
+        connector=null;
         if(status==1)
         {
             status=0;
@@ -82,16 +81,16 @@ public class Database {
         int opt;
         int run=0;
         while(run==0) {
-            Dbconnection db=Dbconnection.getInstance();
+            Dbconnection.getInstance();
 
             LOGGER.info("1.New Connection \n2.check Connection Status \n3.close Connection \n4.exit ");
             LOGGER.info("Enter option:");
 
             opt= input.nextInt();
             switch (opt) {
-                case 1 -> db.newconnection();
-                case 2 -> db.checkconnection();
-                case 3 -> db.closeconnection();
+                case 1 -> Dbconnection.newconnection();
+                case 2 -> Dbconnection.checkconnection();
+                case 3 -> Dbconnection.closeconnection();
                 case 4 -> run=1;
                 default ->LOGGER.info(" Invalid choice");
 
