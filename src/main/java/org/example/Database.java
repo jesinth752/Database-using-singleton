@@ -9,6 +9,8 @@ class Dbconnection
     private static final Logger LOGGER = Logger.getLogger("InfoLogging");
 
      static int status=0;
+    
+     static String p;
 
      static Dbconnection connector=null;
   
@@ -32,10 +34,12 @@ class Dbconnection
     {
         if(status==1)
         {
-            LOGGER.info("Already  connection {} is exists",connector);
+            p="Already  connection "+connector+" is exists";
+            LOGGER.info(p);
         }
         else {
-            LOGGER.info("connected to {} ",connector);
+             p="connected to"+connector; 
+            LOGGER.info(p);
         }
         status=1;
 
