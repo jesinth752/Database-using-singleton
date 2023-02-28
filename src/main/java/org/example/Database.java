@@ -4,79 +4,7 @@ package org.example;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
-class Dbconnection
-{
-    private static final Logger LOGGER = Logger.getLogger("InfoLogging");
 
-     static int status=0;
-    
-     static String p;
-
-     static Dbconnection connector=null;
-  
-
-
-    private Dbconnection()
-    {
-    }
-    public static Dbconnection getInstance()
-    {
-        if(connector==null)
-        {
-
-            connector=new Dbconnection();
-        }
-
-
-        return connector;
-    }
-   static void newconnection()
-    {
-        if(status==1)
-        {
-            p="Already  connection "+connector+" is exists";
-            LOGGER.info(p);
-        }
-        else {
-             p="connected to"+connector; 
-            LOGGER.info(p);
-        }
-        status=1;
-
-
-    }
-    static void checkconnection()
-    {
-        if(status==1)
-        {
-            LOGGER.info("connection status:ON ");
-
-        }
-        else
-        {
-            LOGGER.info("connection status:OFF ");
-        }
-
-    }
-   static void closeconnection()
-    {
-
-
-        connector=null;
-        if(status==1)
-        {
-            status=0;
-            LOGGER.info(" Connection is closed");
-        }
-        else
-        {
-
-            LOGGER.info("NO active Connection");
-        }
-
-
-    }
-}
 public class Database {
     private static final Logger LOGGER = Logger.getLogger("InfoLogging");
     public static void main(String[] args) {
